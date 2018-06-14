@@ -1,0 +1,88 @@
+.container {
+    background-color: lightslategray;
+    padding: 30px;
+    width: 40%
+    
+
+}
+
+
+.header {
+    background-color: lightblue;
+    padding: 20px;
+    color: #423e39;
+    font-size: 25px;
+    line-height: 28px;
+    width: 90%;
+    text-align: center;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+}
+
+.instructions {
+    background-color: lightgreen;
+    padding: 20px;
+    color: #544e48;
+    font-size: 25px;
+    line-height: 28px;
+    width: 90%;
+    text-align: center;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+}
+
+#targetScore {
+    background-color: lightcoral;
+    padding: 20px;
+    color: #544e48;
+    font-size: 20px;
+    line-height: 24px;
+    width: 40%;
+    float: left;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+}
+
+#currentScore {
+    background-color: lightpink;
+    padding: 20px;
+    color: #544e48;
+    font-size: 20px;
+    line-height: 24px;
+    width: 40%;
+    float: left;
+    text-align: left;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+}
+
+.break {
+        clear:both;
+}
+
+
+img {
+    float: left;
+    width: 75px;
+    height: 75px;
+    padding: 20px;
+}
+
+#wins {
+    background-color: lightgoldenrodyellow;
+    padding: 20px;
+    color: #544e48;
+    font-size: 20px;
+    line-height: 24px;
+    width: 40%;
+    float: left;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+
+}
+
+#loss {
+    background-color: lightseagreen;
+    padding: 20px;
+    color: #544e48;
+    font-size: 20px;
+    line-height: 24px;
+    width: 40%;
+    float: left;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+}
