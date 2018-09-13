@@ -1,240 +1,113 @@
 <!DOCTYPE html>
 <html lang="en-us">
+
 <head>
     <meta charset="UTF-8">
     <title>Crystal Game!</title>
     <link rel="stylesheet" type="text/css" href="assets/css/reset.css">
 
     <link rel="stylesheet" type="text/css" href="assets/css/style.css">
-    
+
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+
     <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+
+    <script type="text/javascript" src="assets/js/game.js"></script>
 
 </head>
 
 <body>
 
-<div class="container">
+    <div class="container">
 
-<div class="header" >Crystal Collector</div><br>   
+        <div class="jumbotron">
+            <h1> Crystal Collector</h1>
+            <h2>Each crystal has a different, random value. Click each crystal so that your score matches the score below. Good
+                luck! </h2>
+        </div>
+        <br>
 
-<div class="instructions">Each crystal has a different, random value. 
-        Click each crystal so that your score matches the score below.
-        Good luck! </div>
+        <div class="row">
+            <div class="col-lg-12">
 
-<div id="targetScore">Target Score: </div>
-<div id="currentScore">Current Score: </div><br>
-<div class="break"></div>
-<div id="crystalA" ><img src="assets/images/purple.png"></div>
-<div id="crystalB" ><img src="assets/images/blue.png"></div>
-<div id="crystalC" ><img src="assets/images/yellow.png"></div>
-<div id="crystalD" ><img src="assets/images/green.png"></div><br>
-<div class="break"></div>
-<div id="wins">Wins: </div>
-<div id="loss">Losses: </div><br>
-</div>
-
-
-<script type="text/javascript">
-
-var targetNumber = "";
-var wins = 0;
-var losses = 0;
-var currentScore = 0;
+                <div class="card">
+                    <div class="card-header">
+                        <h3 class="card-title" id="targetScore">Target Score: </h3>
+                    </div>
+                </div>
+            </div>
 
 
-function startGame () {
+            <div class="col-lg-12">
 
-    currentScore = 0;
+                <div class="card">
+                    <div class="card-header">
+                        <h3 class="card-title" id="currentScore">Current Score: </h3>
+                    </div>
+                </div>
+            </div>
 
-    targetScoreOptions = [20, 50, 80, 100, 150];
+        </div>
+
+        <div class="row">
+            <div class="col-lg-12">
+                
+                    
+                    <div class="crystals" id="crystalA">
+                        <img src="assets/images/pink.png" height="250" width="250">
+                    </div>
+               
+                    
+                    <div class="crystals" id="crystalB">
+                        <img src="assets/images/blue.png" height="250" width="250">
+                    </div>
+                
+                    <div class="crystals" id="crystalC">
+                            <img src="assets/images/purple.png" height="250" width="250">
+                        </div>
+
+                        <div class="crystals" id="crystalD">
+                                <img src="assets/images/green.png" height="250" width="250">
+                            </div>
+            </div>
+        </div>
 
 
-    crystalPoints = [10, 20, 5, 30, 25];
+        <div class="row">
+            <div class="col-lg-12">
 
-    targetNumber = targetScoreOptions[Math.floor(Math.random()*targetScoreOptions.length)];
-    
-
-    console.log(targetNumber);
-    $("#targetScore").append(targetNumber);
-
-};
-
-
-function onClick () {
-
-var randomCrystalA = crystalPoints[Math.floor(Math.random()*crystalPoints.length)];
-
-var randomCrystalB = crystalPoints[Math.floor(Math.random()*crystalPoints.length)];
-
-var randomCrystalC = crystalPoints[Math.floor(Math.random()*crystalPoints.length)];
-
-var randomCrystalD = crystalPoints[Math.floor(Math.random()*crystalPoints.length)];
-
-    console.log(randomCrystalA);
-    console.log(randomCrystalB);
-    console.log(randomCrystalC);
-    console.log(randomCrystalD);
+        <div class="card">
+                <div class="card-header">
+                    <h3 class="card-title" id="wins">Wins: </h3>
+                </div>
+            </div>
+        </div>
 
 
-    $("#crystalA").on("click", function() {
+        <div class="col-lg-12">
 
-        currentScore += randomCrystalA;
-        alert("Current Score: " + currentScore);
-        $("#currentScore").text("Current Score: " + currentScore);
+            <div class="card">
+                <div class="card-header">
+                    <h3 class="card-title" id="loss">Losses: </h3>
+                </div>
+            </div>
+        </div>
 
-        if (currentScore === targetNumber) {
-        alert("You win!");
-        wins++;
+    </div>
 
-        $("#wins").text("Wins: " + wins);
+    </div>
 
-        targetNumber = targetScoreOptions[Math.floor(Math.random()*targetScoreOptions.length)];
 
-        $("#targetScore").text("Target Score: " + targetNumber);
-        currentScore = 0;
 
-        $("#currentScore").text("Current Score: " + currentScore);
 
-        }
 
-            else if (currentScore >= targetNumber) {
-                alert("You lose, good day sir!");
-                losses++;
-                $("#loss").text("Losses: " + losses);
 
-                targetNumber = targetScoreOptions[Math.floor(Math.random()*targetScoreOptions.length)];
-
-                $("#targetScore").text("Target Score: " + targetNumber);
-                currentScore = 0;
-
-                $("#currentScore").text("Current Score: " + currentScore);
-            }
-         
-    });
-
-    $("#crystalB").on("click", function() {
-        
-        currentScore += randomCrystalB;
-        alert("Current Score: " + currentScore);
-        $("#currentScore").text("Current Score: " + currentScore);
-
-        if (currentScore === targetNumber) {
-        alert("You win!");
-        wins++;
-
-        $("#wins").text("Wins: " + wins);
-
-        targetNumber = targetScoreOptions[Math.floor(Math.random()*targetScoreOptions.length)];
-
-        $("#targetScore").text("Target Score: " + targetNumber);
-        currentScore = 0;
-
-        $("#currentScore").text("Current Score: " + currentScore);
-
-      
-
-        }
-
-            else if (currentScore >= targetNumber) {
-                alert("You lose, good day sir!");
-                losses++;
-                $("#loss").text("Losses: " + losses);
-
-                targetNumber = targetScoreOptions[Math.floor(Math.random()*targetScoreOptions.length)];
-
-                $("#targetScore").text("Target Score: " + targetNumber);
-                currentScore = 0;
-
-                $("#currentScore").text("Current Score: " + currentScore);
-                }
        
-
-    });
-
-    $("#crystalC").on("click", function() {
-        
-        currentScore += randomCrystalC
-        alert("Current Score: " + currentScore);
-        $("#currentScore").text("Current Score: " + currentScore);
-
-        if (currentScore === targetNumber) {
-        alert("You win!");
-        wins++;
-
-        $("#wins").text("Wins: " + wins);
-
-        targetNumber = targetScoreOptions[Math.floor(Math.random()*targetScoreOptions.length)];
-
-        $("#targetScore").text("Target Score: " + targetNumber);
-        currentScore = 0;
-
-        $("#currentScore").text("Current Score: " + currentScore);
-
-
-        
-        }
-
-            else if (currentScore >= targetNumber) {
-                alert("You lose, good day sir!");
-                losses++;
-                $("#loss").text("Losses: " + losses);
-
-                targetNumber = targetScoreOptions[Math.floor(Math.random()*targetScoreOptions.length)];
-
-                $("#targetScore").text("Target Score: " + targetNumber);
-                currentScore = 0;
-
-                $("#currentScore").text("Current Score: " + currentScore);
-            }
-
-    });
-
-    $("#crystalD").on("click", function() {
-
-        currentScore += randomCrystalD
-        alert("Current Score: " + currentScore);
-        $("#currentScore").text("Current Score: " + currentScore);
-        
-
-        if (currentScore === targetNumber) {
-        alert("You win!");
-        wins++;
-
-        $("#wins").text("Wins: " + wins);
-
-        targetNumber = targetScoreOptions[Math.floor(Math.random()*targetScoreOptions.length)];
-
-        $("#targetScore").text("Target Score: " + targetNumber);
-        currentScore = 0;
-
-        $("#currentScore").text("Current Score: " + currentScore);
-       
-        }
-        
-            else if (currentScore >= targetNumber) {
-                alert("You lose, good day sir!");
-                losses++;
-                $("#loss").text("Losses: " + losses);  
-
-                targetNumber = targetScoreOptions[Math.floor(Math.random()*targetScoreOptions.length)];
-
-                $("#targetScore").text("Target Score: " + targetNumber);
-                currentScore = 0;
-
-                $("#currentScore").text("Current Score: " + currentScore);
-            }      
-        
-        });
-    
-}
-
-
-startGame()
-onClick()
+        <br>
+    </div>
 
 
 
-
-</script>
 </body>
+
 </html>
