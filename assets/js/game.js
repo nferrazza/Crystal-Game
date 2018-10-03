@@ -27,11 +27,11 @@
 
     function onClick() {
 
-        var randomCrystalA = crystalPoints[Math.floor(Math.random() * crystalPoints.length)];
+        var randomCrystalA = crystalPoints[Math.floor(Math.random() * crystalPoints.length )];
 
-        var randomCrystalB = crystalPoints[Math.floor(Math.random() * crystalPoints.length)];
+        var randomCrystalB = crystalPoints[Math.floor(Math.random() * crystalPoints.length )];
 
-        var randomCrystalC = crystalPoints[Math.floor(Math.random() * crystalPoints.length)];
+        var randomCrystalC = crystalPoints[Math.floor(Math.random() * crystalPoints.length )];
 
         var randomCrystalD = crystalPoints[Math.floor(Math.random() * crystalPoints.length)];
 

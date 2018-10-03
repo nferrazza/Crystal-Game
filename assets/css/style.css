@@ -1,25 +1,40 @@
-.img {
-    width: 10px;
-    height: 10px;
-    margin: 0px;
-    padding: 0px;
+
+body {
+    background-color: rgba(148, 24, 148, 0.568);
     
-    
+
 }
 
-.crystals {
-    float: left;
-    padding:5px;
-    margin: 5px;
-    
+
+
+
+.crystalRow {
+    display: flex;
+    flex-direction: row;
+    padding: 10px;
+    margin-left: 3%;
+    justify-content: center;
+
 }
 
- #crystalA {
-    float: left;
-    margin-left: 25px;
-}
-
+ 
 .container {
-    background-color: black;
+    background-image: url(https://www.shape.com/sites/shape.com/files/u398/crystals.jpg);
+    opacity: .65;
     
+}
+
+.jumbotron {
+    text-align: center;
+    font-size: 30px;
+}
+
+.card, .jumbotron {
+    background-color: rgb(179, 67, 179);
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    
+}
+
+.card {
+    font-size: 20px;
 }
